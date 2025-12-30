@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free Recharge Offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      padding: 30px;
+      text-align: center;
+    }
+    .box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 360px;
+      margin: auto;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    .note {
+      margin-top: 20px;
+      color: red;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>🎁 Free Recharge Offer</h2>
+  <p>
+    Recharge paane ke liye is offer ko<br>
+    <b>friends ke saath share karo</b>
+  </p>
+
+  <button onclick="shareOffer()">📤 Share & Get Recharge</button>
+  
+</div>
+
+<script>
+/* 🔴 YAHAN APNA AD LINK DALO */
+const AD_LINK = "https://linkvertise.com/XXXX";
+
+function shareOffer() {
+
+  const customMessage =
+`🎁 Free Recharge Offer 🎁
+
+Mujhe yahan se recharge mila 😍
+Tum bhi try karo 👇
+${AD_LINK}`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Free Recharge Offer",
+      text: customMessage
+    });
+  } else {
+    const whatsappURL =
+      "https://wa.me/?text=" + encodeURIComponent(customMessage);
+    window.open(whatsappURL, "_blank");
+  }
+}
+</script>
+
+</body>
+</html>
